@@ -1,0 +1,13 @@
+.card {
+  width: 300px; /* adjusted size based on the theme */
+  height: 350px; /* adjusted size based on the theme */
+  background: black;
+  box-shadow: 0px 1px 4px 1px rgba(158, 151, 151, 0.25);
+  border-radius: 15px;
+  margin: 12px;
+  padding: 12px;
+}
+.d-flex {
+  display: flex;
+}
+

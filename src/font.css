@@ -1,0 +1,29 @@
+@font-face {
+    font-family: "AlienEncounters";
+    src: local("AlienEncounters"),
+     url("./fonts/Alien-Encounters-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Digital7";
+    src: local("Digital7"),
+     url("./fonts/digital-7.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "DotMatrix";
+    src: local("DotMatrix"),
+     url("./fonts/DOTMATRI.TTF") format("truetype");
+}
+
+@font-face {
+    font-family: "GameOver";
+    src: local("GameOver"),
+     url("./fonts/game_over.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Gameplay";
+    src: local("Gameplay"),
+     url("./fonts/Gameplay.ttf") format("truetype");
+}
