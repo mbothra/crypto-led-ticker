@@ -46,7 +46,8 @@ const theme = createTheme({
     box: {
       leftWidth: "720px",
       specialLeftWidth: "540px", //special len >8
-      rightWidth: "750px"
+      rightWidth: "750px",
+      specialWidth: "800px", //special len >8
     },
     caption: {
       symbol: "",

@@ -26,8 +26,7 @@ export class PriceCard extends React.Component {
 
     renderDefaultCard() {
         const { imageUrl, price, symbol, oracles, lastUpdatedAt, chain, isUpward } = this.props;
-        const determineBoxWidth = symbol.length > 8 ? theme.sizes.box.specialLeftWidth : theme.sizes.box.leftWidth;
-
+        const determineBoxWidth = symbol.length > 8 ? (symbol.length == 9 ? theme.sizes.box.specialWidth : theme.sizes.box.specialLeftWidth) : theme.sizes.box.leftWidth;
             // Function to check if the imageUrl is a valid URL
         const isValidURL = (str) => {
             try {
