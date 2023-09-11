@@ -4,13 +4,27 @@ import theme from '../Theme';
 
 class CaptionedText extends React.Component {
 
+    toShortScientificNotation(num) {
+        let base;
+        let exponent = null;
+        if (typeof num == 'string' && num.includes('*')) {  // Check if it's a string and contains '*'
+            base = num.substring(0, num.indexOf('*'));
+            exponent = num.substring(num.indexOf('^')+1);  // Assumes format is like "x.x*e^xx"
+        } else {
+            base = num;  // Here, if num is not a string in scientific format, assign the entire number to base
+        }
+        return { base, exponent };
+    }
+    
+    
+
     renderLongSymbol() {
         const { mainText } = this.props;
         const { sizes } = theme;
         const fontSize = sizes.main.special;  // Adjust the font size as per requirement
 
         return (
-            <Typography variant={sizes.main.specialVariant} component="div" gutterBottom fontFamily='Gameplay' fontSize={fontSize}>
+            <Typography variant={sizes.main.specialVariant} component="div" gutterBottom fontFamily='MaisonMono' fontSize={fontSize}>
                 {mainText}
             </Typography>
         );
@@ -20,13 +34,13 @@ class CaptionedText extends React.Component {
         const { mainText, captionText, type, isUpward } = this.props;
         const { sizes } = theme;
 
-        let color, variant=sizes.main.otherVariant, font='AlienEncounters'
+        let color, variant=sizes.main.otherVariant, font='MaisonMono'
         if(captionText == '-') {
             if(mainText.length > 9) {
                 return (
                     <Box sx={{my: 2}}>
                         {this.renderLongSymbol()}
-                        <Typography variant="caption" gutterBottom component="div" fontFamily='Gameplay' color='black' fontSize={sizes.caption.special}>
+                        <Typography variant="caption" gutterBottom component="div" fontFamily='MaisonMono' color='black' fontSize={sizes.caption.special}>
                             {captionText}
                         </Typography>
                     </Box>
@@ -34,19 +48,33 @@ class CaptionedText extends React.Component {
             } else {
                 color = 'black';
                 variant = sizes.main.symbolVariant;
-                font = 'Gameplay';
+                font = 'MaisonMono';
             }
         }
 
         if(type == 'price') {
             color= isUpward?"green":"red"
             let marginBottom = isUpward? sizes.price.arrow.marginBottom.upward:sizes.price.arrow.marginBottom.downward
+            let marginTop = isUpward? sizes.price.arrow.marginTop.upward:sizes.price.arrow.marginTop.downward
+            let {base, exponent} = this.toShortScientificNotation(mainText)
+            console.log("base", base)
             return (
                 <Box sx={{my: 2}}>
                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
                     <Typography variant={sizes.main.priceVariant} component="div" gutterBottom  fontFamily= {font} color={color} marginTop={sizes.price.marginTop}>
-                        {mainText}             
+                        {base}             
                     </Typography>
+                    {exponent  && (
+                        <>
+                            <Typography variant={sizes.main.priceVariant} component="div" gutterBottom fontFamily={font} color={color} fontSize={sizes.main.exponentFont} marginBottom='1em'>
+                                x10
+                            </Typography>
+                            <Typography variant="caption" component="span" gutterBottom fontFamily={font} color={color} marginBottom='1em'>
+                                <sup>{exponent}</sup>
+                            </Typography>
+                        </>
+                    )}
+
                     <div style={{
                             width: 0,
                             height: 0,
@@ -56,7 +84,7 @@ class CaptionedText extends React.Component {
                             borderTop: isUpward ? 'none' : `${sizes.price.arrow.borderTop} solid red`,
                             marginLeft: `${sizes.price.arrow.marginLeft}`,
                             marginBottom: marginBottom,
-                            marginTop:`${sizes.price.arrow.marginTop}`
+                            marginTop: marginTop
                         }}></div>       
                     </Box>
                     <Typography variant="caption" gutterBottom component="div" fontFamily= {font}>
@@ -67,7 +95,7 @@ class CaptionedText extends React.Component {
         }
         return (
             <Box sx={{my: 2}}>
-                <Typography variant={variant} component="div" gutterBottom  fontFamily= {font} color='white'>
+                <Typography variant={variant} component="div" gutterBottom  fontFamily= {font} color='white' marginRight='50px'>
                     {mainText}
                 </Typography>
                 <Typography variant="caption" gutterBottom component="div" fontFamily= {font} color={color}>

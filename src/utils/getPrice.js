@@ -5,6 +5,14 @@ import { formatDistanceToNow } from 'date-fns';
 
 const lastPrices = {}; // Store last prices for each symbol and chain
 
+function toScientificNotation(num) {
+    if (num <= 10000) return num.toFixed(4);  // for numbers <= 10,000, just keep up to 4 decimal places
+
+    const exponent = Math.floor(Math.log10(num));
+    const coefficient = num / Math.pow(10, exponent);
+    return `${coefficient.toFixed(3)}*e^${exponent}`;
+}
+
 export async function fetchAssetData() {
     const results = []
     for (const asset of assetMapping) {
@@ -23,7 +31,7 @@ export async function fetchAssetData() {
         }
 
         try {
-            const { price, timestamp } = await getPriceData(asset.address, asset.rpc_url);
+            let { price, timestamp } = await getPriceData(asset.address, asset.rpc_url);
             let lastUpdated = formatDistanceToNow(new Date(timestamp)) + ' ago';
             console.log("lastUpdated",lastUpdated)
             lastUpdated = lastUpdated.replace('seconds', 'secs');
@@ -34,6 +42,10 @@ export async function fetchAssetData() {
 
             const lastPriceKey = `${symbol}_${asset.chain}`;
             const isUpward = lastPrices[lastPriceKey] ? price > lastPrices[lastPriceKey] : null;
+            if (price > 100000) {
+                price = toScientificNotation(price);
+            } 
+    
             lastPrices[lastPriceKey] = price; // Update last price
 
             console.log(`Price for ${symbol} on ${asset.chain}: ${price}, Last updated at: ${lastUpdated}`);

@@ -80,7 +80,7 @@ export const assetMapping = [
     },
 
     {
-        'symbol': 'NFT Blue chip mkt cap',
+        'symbol': 'NFT Blue chip Mktcap',
         'address': '0x8d0e319ebaa8df32e088e469062f85abf2ebe599',
         'chain': 'Arbitrum Mainnet',
         'rpc_url': 'https://arb-mainnet.g.alchemy.com/v2/g1tNIQuWGtl16hLW-Xci8tU08Q2afJKe',

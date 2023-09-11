@@ -41,25 +41,28 @@ const theme = createTheme({
       width: "310px",  // example size, can be adjusted
       height: "384px",  // example size, can be adjusted,
       imgRightMargin: "50px",
-      imgLeftMargin: "50px"
+      imgLeftMargin: "150px"
     },
     box: {
-      leftWidth: "720px",
+      leftWidth: "630px",
       specialLeftWidth: "540px", //special len >8
-      rightWidth: "750px",
-      specialWidth: "800px", //special len >8
+      rightWidth: "850px",
+      specialWidth: "700px", //special len =8
+      specialRightWidth: "940px",
+      specialRWidth:"780px"
     },
     caption: {
       symbol: "",
       others: "",
-      special: "1.4em"
+      special: "1em"
     },
     main: {
       symbolVariant: "h1",
-      special: "4em",
+      special: "4.46em",
       priceVariant:"h2",
       otherVariant:"h2",
-      specialVariant:"h2"
+      specialVariant:"h2",
+      exponentFont:"2em"
     },
     price: {
       marginTop: "-35px",
@@ -69,7 +72,10 @@ const theme = createTheme({
         borderTop: "20px",
         borderBottom: "20px",
         marginLeft: "20px",
-        marginTop: "-36px",
+        marginTop: {
+          upward: "-50px",
+          downward: "-50px"
+        },
         marginBottom: {
           upward: "30px",
           downward: "20px"
@@ -81,7 +87,7 @@ const theme = createTheme({
       imgHeight:"300px",
       fontSize: "4em",
       fontFamily: "Montserrat",
-      width:"600px",
+      width:"740px",
       paddingLeft:"100px"
     }
   }

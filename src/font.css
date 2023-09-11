@@ -27,3 +27,21 @@
     src: local("Gameplay"),
      url("./fonts/Gameplay.ttf") format("truetype");
 }
+
+@font-face {
+    font-family: "MaisonMono";
+    src: local("MaisonMono"),
+     url("./fonts/MaisonMono-Regular.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "Gameplay";
+    src: local("Gameplay"),
+     url("./fonts/Gameplay.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Gameplay";
+    src: local("Gameplay"),
+     url("./fonts/Gameplay.ttf") format("truetype");
+}
