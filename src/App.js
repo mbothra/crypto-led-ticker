@@ -16,7 +16,12 @@ export default function App() {
   const [fetchedData, setFetchedData] = useState([]); // Initialize state to hold fetched data
   const [canFetch, setCanFetch] = useState(true);  // State to determine if we can start a new fetch
   const handle = useFullScreenHandle();
-
+  const estimatedBubbleWidth = 1480; // hypothetical average width of each bubble
+  const totalBubbles = fetchedData.length;
+  const estimatedWidthOfAllBubbles = estimatedBubbleWidth * totalBubbles;
+  
+  const delayForSecondTicker = (2880 * 100000) / estimatedWidthOfAllBubbles;
+  
 
   const fetchData = () => {
     // If a fetch isn't allowed, return immediately
@@ -73,10 +78,14 @@ export default function App() {
     <HorizontalTicker
           duration={100000}
           easing={"linear"}
-          delay={0}
+          delay={delayForSecondTicker}
         >
           {fetchedData.map(renderBubbles)}
         </HorizontalTicker>
+
+        <HorizontalTicker duration={100000} easing={"linear"} delay={0} style={{ marginLeft: "2880px" }}>
+              {fetchedData.map(renderBubbles)}
+            </HorizontalTicker>
         </FullScreen>
 
     </ThemeProvider>
