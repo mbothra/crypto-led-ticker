@@ -14,14 +14,17 @@ import { FullScreen, useFullScreenHandle } from "react-full-screen";
 export default function App() {
   const renderBubbles = (bubble, index) => { return <Bubble key={index} {...bubble} />;}
   const [fetchedData, setFetchedData] = useState([]); // Initialize state to hold fetched data
+  const [fetchedDataSecondFeed, setFetchedDataSecondFeed] = useState([]); // Initialize state to hold fetched data
+
   const [canFetch, setCanFetch] = useState(true);  // State to determine if we can start a new fetch
   const handle = useFullScreenHandle();
-  const estimatedBubbleWidth = 1480; // hypothetical average width of each bubble
+  const estimatedBubbleWidth = 2250; // hypothetical average width of each bubble
   const totalBubbles = fetchedData.length;
   const estimatedWidthOfAllBubbles = estimatedBubbleWidth * totalBubbles;
   
   const delayForSecondTicker = (2880 * 100000) / estimatedWidthOfAllBubbles;
-  
+  const [isInitialRender, setIsInitialRender] = useState(true);
+
 
   const fetchData = () => {
     // If a fetch isn't allowed, return immediately
@@ -34,8 +37,8 @@ export default function App() {
     fetchAssetData()
       .then(data => {
         console.log(data);
-        setFetchedData(data);
-
+        setFetchedData(data['originalResults']);
+        setFetchedDataSecondFeed(data['rearrangedResults'])
         // After fetching data, wait for 45 seconds before allowing another fetch
         setTimeout(() => {
           setCanFetch(true);
@@ -74,7 +77,7 @@ export default function App() {
           Enter fullscreen
         </button>
         <FullScreen handle={handle}>
-
+        <div style={{ width: '2880px', height: '384px', overflow: 'hidden' }}>
     <HorizontalTicker
           duration={100000}
           easing={"linear"}
@@ -82,10 +85,15 @@ export default function App() {
         >
           {fetchedData.map(renderBubbles)}
         </HorizontalTicker>
+        </div>
+        <div style={{ width: '2880px', height: '384px', overflow: 'hidden' }}>
 
-        <HorizontalTicker duration={100000} easing={"linear"} delay={0} style={{ marginLeft: "2880px" }}>
-              {fetchedData.map(renderBubbles)}
-            </HorizontalTicker>
+            <HorizontalTicker duration={100000} easing={"linear"} delay={0}>
+                  {fetchedData.map(renderBubbles)}
+
+                </HorizontalTicker>
+                </div>
+
         </FullScreen>
 
     </ThemeProvider>

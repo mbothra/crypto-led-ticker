@@ -10,7 +10,7 @@ export class PriceCard extends React.Component {
         const { sizes } = theme;
 
         return (
-            <Box sx={{ display: 'flex', p: 2, background: '#375bd2', alignItems: 'center', justifyContent: 'space-between', height: sizes.brand.height, width: sizes.brand.width*1.1, paddingLeft: sizes.brand.paddingLeft,                 border: '2px solid white', // Gradient or solid border
+            <Box sx={{ display: 'flex', p: 2, background: '#375bd2', alignItems: 'center', justifyContent: 'space-between', height: sizes.brand.height, width: sizes.brand.width*1.1, paddingLeft: sizes.brand.paddingLeft, border: '2px solid white', height: '384px',
             borderRadius: '10px',  // Rounded corners
             boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)' // Subtle box shadow
 }}>
@@ -44,6 +44,7 @@ export class PriceCard extends React.Component {
         
         return (
             <Box     sx={{ 
+                height: '384px',
                 display: 'flex', 
                 p: 1, 
                 background: 'black',

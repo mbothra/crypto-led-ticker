@@ -20,7 +20,7 @@ const theme = createTheme({
       fontFamily: 'Digital7',
       backgroundColor: '#000',
       fontSize:'1.8em',
-      marginTop:'-25px'
+      marginTop:'-50px'
     },
     h2: {
       color: 'white',
@@ -39,17 +39,17 @@ const theme = createTheme({
     height: "384px",
     card: {
       width: "310px",  // example size, can be adjusted
-      height: "384px",  // example size, can be adjusted,
+      height: "344px",  // example size, can be adjusted,
       imgRightMargin: "50px",
       imgLeftMargin: "150px"
     },
     box: {
-      leftWidth: "630px",
-      specialLeftWidth: "540px", //special len >8
-      rightWidth: "850px",
-      specialWidth: "700px", //special len =8
-      specialRightWidth: "940px",
-      specialRWidth:"780px"
+      leftWidth: "610px",
+      specialLeftWidth: "520px", //special len >8
+      rightWidth: "830px",
+      specialWidth: "680px", //special len =8
+      specialRightWidth: "920px",
+      specialRWidth:"760px"
     },
     caption: {
       symbol: "",
@@ -65,7 +65,7 @@ const theme = createTheme({
       exponentFont:"2em"
     },
     price: {
-      marginTop: "-35px",
+      marginTop: "-31px",
       arrow: {
         borderLeft: "10px",
         borderRight: "10px",
@@ -87,7 +87,7 @@ const theme = createTheme({
       imgHeight:"300px",
       fontSize: "4em",
       fontFamily: "Montserrat",
-      width:"740px",
+      width:"1440px",
       paddingLeft:"100px"
     }
   }

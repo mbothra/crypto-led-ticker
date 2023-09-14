@@ -63,7 +63,13 @@ export async function fetchAssetData() {
             console.error(`Error fetching price for ${symbol} on ${asset.chain}: ${error}`);
         }
     }
-    return results;
+    const firstTwo = results.slice(0, 2);
+    const remaining = results.slice(2);
+    const modifiedResults = [...remaining, ...firstTwo];
+    return {
+        originalResults: results,
+        rearrangedResults: modifiedResults
+    };
 }
 
 
