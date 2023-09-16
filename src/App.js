@@ -79,17 +79,17 @@ export default function App() {
         <FullScreen handle={handle}>
         <div style={{ width: '2880px', height: '384px', overflow: 'hidden' }}>
     <HorizontalTicker
-          duration={100000}
+          duration={200000}
           easing={"linear"}
-          delay={delayForSecondTicker}
+          delay={0}
         >
           {fetchedData.map(renderBubbles)}
         </HorizontalTicker>
         </div>
         <div style={{ width: '2880px', height: '384px', overflow: 'hidden' }}>
 
-            <HorizontalTicker duration={100000} easing={"linear"} delay={0}>
-                  {fetchedData.map(renderBubbles)}
+            <HorizontalTicker duration={200000} easing={"linear"} delay={0}>
+                  {fetchedDataSecondFeed.map(renderBubbles)}
 
                 </HorizontalTicker>
                 </div>

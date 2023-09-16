@@ -87,7 +87,7 @@ const theme = createTheme({
       imgHeight:"300px",
       fontSize: "4em",
       fontFamily: "Montserrat",
-      width:"1440px",
+      width:"2880px",
       paddingLeft:"100px"
     }
   }

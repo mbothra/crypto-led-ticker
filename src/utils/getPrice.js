@@ -14,7 +14,7 @@ function toScientificNotation(num) {
 }
 
 export async function fetchAssetData() {
-    const results = []
+    let results = []
     for (const asset of assetMapping) {
         const symbol = asset.symbol;
         if(asset.brand) {
@@ -63,9 +63,12 @@ export async function fetchAssetData() {
             console.error(`Error fetching price for ${symbol} on ${asset.chain}: ${error}`);
         }
     }
-    const firstTwo = results.slice(0, 2);
-    const remaining = results.slice(2);
-    const modifiedResults = [...remaining, ...firstTwo];
+    const brand = [{
+        'brand':true,
+        'symbol':'Brand'
+    }]
+    const modifiedResults = [...results, ...brand];
+    results = [...brand, ...results]
     return {
         originalResults: results,
         rearrangedResults: modifiedResults

@@ -34,11 +34,6 @@ export const assetMapping = [
         'rpc_url': 'https://eth-mainnet.g.alchemy.com/v2/ZVo9MSHhSrmOOPYOxqAbhmqsUkcydnoh',
         'image_url': 'https://cryptologos.cc/logos/aave-aave-logo.png',
     },
-    {        
-        'symbol': 'Brand',
-        'brand':true
-    },
-
     {
         'symbol': 'MATIC/USD',
         'address': '0xab594600376ec9fd91f8e885dadf0ce036862de0',
@@ -74,11 +69,6 @@ export const assetMapping = [
         'rpc_url': 'https://avalanche-mainnet.infura.io/v3/9451e55974fb4f42acb052fa54764131',
         'image_url': 'https://cryptologos.cc/logos/tether-usdt-logo.png',
     },
-    {        
-        'symbol': 'Brand',
-        'brand':true
-    },
-
     {
         'symbol': 'NFT Blue chip Mktcap',
         'address': '0x8d0e319ebaa8df32e088e469062f85abf2ebe599',
@@ -108,17 +98,12 @@ export const assetMapping = [
         'image_url': 'https://images.prismic.io/data-chain-link/98261c88-123d-4a34-b404-9cbf6f39a211_cachegold.png',
     },
     {
-        'symbol': 'AMKT PoR',
+        'symbol': 'Amkt PoR',
         'address': '0x32640253a3d0fc25597d8a784a839311ff404c83',
         'chain': 'Polygon Mainnet',
         'rpc_url': 'https://polygon-mainnet.g.alchemy.com/v2/hsCQ2wVikhsBGfLwjnLPlDpGl8dOJYe4',
         'image_url': 'https://images.prismic.io/data-chain-link/2f244404-cd3d-4a73-81b6-f70acff025f1_alongside+logo.png',
     },
-    {        
-        'symbol': 'Brand',
-        'brand':true
-    },
-
     {
         'symbol': 'Bored Ape Yacht Club',
         'address': '0x352f2bc3039429fc2fe62004a1575ae74001cfce',

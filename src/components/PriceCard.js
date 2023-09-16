@@ -10,27 +10,41 @@ export class PriceCard extends React.Component {
         const { sizes } = theme;
 
         return (
-            <Box sx={{ display: 'flex', p: 2, background: '#375bd2', alignItems: 'center', justifyContent: 'space-between', height: sizes.brand.height, width: sizes.brand.width*1.1, paddingLeft: sizes.brand.paddingLeft, border: '2px solid white', height: '384px',
-            borderRadius: '10px',  // Rounded corners
-            boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)' // Subtle box shadow
-}}>
-                <Box sx={{ p: 1, width: sizes.brand.width, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <img src={chainlinkLogo} alt="Chainlink logo" style={{ width: sizes.brand.imgHeight, height: sizes.brand.imgHeight }} />
-                </Box>
-                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: sizes.brand.width }}>
-                    <span style={{ color: 'white', fontSize: sizes.brand.fontSize, fontFamily: sizes.brand.fontFamily}}>Data</span>
-                    <Box sx={{ background: 'white', borderRadius: '8px', padding: '0.2em 0.5em', marginTop: '0.5em' }}>
-                        <span style={{ color: '#375bd2', fontSize: sizes.brand.fontSize, fontFamily: sizes.brand.fontFamily }}>feeds</span>
+            <Box sx={{
+                p: 2,
+                background: '#375bd2',
+                alignItems: 'center',  // This should center everything vertically
+                justifyContent: 'center',  // Centering content
+                height: sizes.brand.height,
+                width: sizes.brand.width,
+                paddingLeft: sizes.brand.paddingLeft,
+                border: '2px solid white',
+                borderRadius: '10px',  // Rounded corners
+                boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)' // Subtle box shadow
+            }}>
+                <Box sx={{ 
+                    display: 'flex', 
+                    flexDirection: 'row',   // Horizontal stacking
+                    alignItems: 'center',   // Vertical centering for items within this flexbox
+                    justifyContent: 'center'  // Centering content horizontally
+                }}>
+                    <img src={chainlinkLogo} alt="Chainlink logo" style={{ width: sizes.brand.imgHeight, height: sizes.brand.imgHeight, marginRight: '10em', marginTop: '25px' }} />  
+                    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <span style={{ color: 'white', fontSize: sizes.brand.fontSize, fontFamily: sizes.brand.fontFamily }}>Data</span>
+                        <Box sx={{ background: 'white', borderRadius: '8px', padding: '0.2em 0.5em', marginTop: '0.5em' }}>
+                            <span style={{ color: '#375bd2', fontSize: sizes.brand.fontSize, fontFamily: sizes.brand.fontFamily }}>feeds</span>
+                        </Box>
                     </Box>
                 </Box>
             </Box>
+
         );
     }
 
     renderDefaultCard() {
         const { imageUrl, price, symbol, oracles, lastUpdatedAt, chain, isUpward } = this.props;
-        const determineBoxWidth = symbol.length > 8 ? (symbol.length == 9 ? theme.sizes.box.specialWidth : theme.sizes.box.specialLeftWidth) : theme.sizes.box.leftWidth;
-        const determineBoxRightWidth = symbol.length > 8 ? (symbol.length == 9 ? theme.sizes.box.specialRWidth : theme.sizes.box.specialRightWidth) : theme.sizes.box.rightWidth;
+        const determineBoxWidth = symbol.length > 8 ? (symbol.length == 9 ? theme.sizes.box.specialWidth : theme.sizes.box.specialLeftWidth) : symbol == 'Amkt PoR'?theme.sizes.box.specialWidth:theme.sizes.box.leftWidth;
+        const determineBoxRightWidth = symbol.length > 8 ? (symbol.length == 9 ? theme.sizes.box.specialRWidth : theme.sizes.box.specialRightWidth) : symbol == 'Amkt PoR'?theme.sizes.box.specialRWidth:theme.sizes.box.rightWidth;
             // Function to check if the imageUrl is a valid URL
         const isValidURL = (str) => {
             try {
