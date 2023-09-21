@@ -17,19 +17,6 @@ export async function fetchAssetData() {
     let results = []
     for (const asset of assetMapping) {
         const symbol = asset.symbol;
-        if(asset.brand) {
-            results.push ({
-                "price": 'price',
-                "symbol": 'symbol',
-                "oracles": "31/31",
-                "lastUpdatedAt": 'lastUpdated',
-                "chain": 'asset.chain',
-                "imageUrl": 'asset.image_url',
-                "isUpward": 'isUpward',
-                "brand": asset.brand
-            })
-        }
-
         try {
             let { price, timestamp } = await getPriceData(asset.address, asset.rpc_url);
             let lastUpdated = formatDistanceToNow(new Date(timestamp)) + ' ago';
@@ -52,12 +39,12 @@ export async function fetchAssetData() {
             results.push ({
                 "price": price,
                 "symbol": symbol,
-                "oracles": "31/31",
+                "oracles": asset.oracle,
                 "lastUpdatedAt": lastUpdated,
                 "chain": asset.chain,
                 "imageUrl": asset.image_url,
                 "isUpward": isUpward,
-                "brand": asset.brand
+                "brand": asset.brand,
             })
         } catch (error) {
             console.error(`Error fetching price for ${symbol} on ${asset.chain}: ${error}`);

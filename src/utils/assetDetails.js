@@ -5,6 +5,7 @@ export const assetMapping = [
         'chain': 'Ethereum Mainnet',
         'rpc_url': 'https://eth-mainnet.g.alchemy.com/v2/ZVo9MSHhSrmOOPYOxqAbhmqsUkcydnoh',
         'image_url': 'https://cryptologos.cc/logos/ethereum-eth-logo.png',
+        'oracle':'31/31'
     },
     {
         'symbol': 'BTC/USD',
@@ -12,6 +13,7 @@ export const assetMapping = [
         'chain': 'Ethereum Mainnet',
         'rpc_url': 'https://eth-mainnet.g.alchemy.com/v2/ZVo9MSHhSrmOOPYOxqAbhmqsUkcydnoh',
         'image_url': 'https://cryptologos.cc/logos/bitcoin-btc-logo.png',
+        'oracle':'31/31'
     },
     {
         'symbol': 'DAI/USD',
@@ -19,6 +21,7 @@ export const assetMapping = [
         'chain': 'Ethereum Mainnet',
         'rpc_url': 'https://eth-mainnet.g.alchemy.com/v2/ZVo9MSHhSrmOOPYOxqAbhmqsUkcydnoh',
         'image_url': 'https://cryptologos.cc/logos/multi-collateral-dai-dai-logo.png',
+        'oracle':'19/19'
     },
     {
         'symbol': 'COMP/USD',
@@ -26,6 +29,7 @@ export const assetMapping = [
         'chain': 'Ethereum Mainnet',
         'rpc_url': 'https://eth-mainnet.g.alchemy.com/v2/ZVo9MSHhSrmOOPYOxqAbhmqsUkcydnoh',
         'image_url': 'https://cryptologos.cc/logos/compound-comp-logo.png',
+        'oracle':'19/19'
     },
     {
         'symbol': 'AAVE/USD',
@@ -33,6 +37,7 @@ export const assetMapping = [
         'chain': 'Ethereum Mainnet',
         'rpc_url': 'https://eth-mainnet.g.alchemy.com/v2/ZVo9MSHhSrmOOPYOxqAbhmqsUkcydnoh',
         'image_url': 'https://cryptologos.cc/logos/aave-aave-logo.png',
+        'oracle':'19/19'
     },
     {
         'symbol': 'MATIC/USD',
@@ -40,6 +45,7 @@ export const assetMapping = [
         'chain': 'Polygon Mainnet',
         'rpc_url': 'https://polygon-mainnet.g.alchemy.com/v2/hsCQ2wVikhsBGfLwjnLPlDpGl8dOJYe4',
         'image_url': 'https://cryptologos.cc/logos/polygon-matic-logo.png',
+        'oracle':'16/16'
     },
     {
         'symbol': 'USDC/USD',
@@ -47,6 +53,7 @@ export const assetMapping = [
         'chain': 'Polygon Mainnet',
         'rpc_url': 'https://polygon-mainnet.g.alchemy.com/v2/hsCQ2wVikhsBGfLwjnLPlDpGl8dOJYe4',
         'image_url': 'https://cryptologos.cc/logos/usd-coin-usdc-logo.png',
+        'oracle':'16/16'
     },
     {
         'symbol': 'OP/USD',
@@ -54,6 +61,7 @@ export const assetMapping = [
         'chain': 'Optimism Mainnet',
         'rpc_url': 'https://opt-mainnet.g.alchemy.com/v2/Zttu4iJntvKzvrf_r5JDUftg8_oEBVla',
         'image_url': 'https://cryptologos.cc/logos/optimism-ethereum-op-logo.png',
+        'oracle':'10/10'
     },
     {
         'symbol': 'AVAX/USD',
@@ -61,6 +69,7 @@ export const assetMapping = [
         'chain': 'Avalanche Mainnet',
         'rpc_url': 'https://avalanche-mainnet.infura.io/v3/9451e55974fb4f42acb052fa54764131',
         'image_url': 'https://cryptologos.cc/logos/avalanche-avax-logo.png',
+        'oracle':'16/16'
     },
     {
         'symbol': 'USDT/USD',
@@ -68,13 +77,15 @@ export const assetMapping = [
         'chain': 'Avalanche Mainnet',
         'rpc_url': 'https://avalanche-mainnet.infura.io/v3/9451e55974fb4f42acb052fa54764131',
         'image_url': 'https://cryptologos.cc/logos/tether-usdt-logo.png',
+        'oracle':'16/16'
     },
     {
-        'symbol': 'NFT Blue chip Mktcap',
+        'symbol': 'NFT Blue Chip Mktcap',
         'address': '0x8d0e319ebaa8df32e088e469062f85abf2ebe599',
         'chain': 'Arbitrum Mainnet',
         'rpc_url': 'https://arb-mainnet.g.alchemy.com/v2/g1tNIQuWGtl16hLW-Xci8tU08Q2afJKe',
         'image_url': 'blue',
+        'oracle':'10/10'
     },
     {
         'symbol': 'CSPX/USD',
@@ -82,6 +93,7 @@ export const assetMapping = [
         'chain': 'Ethereum Mainnet',
         'rpc_url': 'https://eth-mainnet.g.alchemy.com/v2/ZVo9MSHhSrmOOPYOxqAbhmqsUkcydnoh',
         'image_url': 'gray',
+        'oracle':'16/16'
     },
     {
         'symbol': 'IB01/USD',
@@ -89,20 +101,23 @@ export const assetMapping = [
         'chain': 'Ethereum Mainnet',
         'rpc_url': 'https://eth-mainnet.g.alchemy.com/v2/ZVo9MSHhSrmOOPYOxqAbhmqsUkcydnoh',
         'image_url': 'red',
+        'oracle':'16/16'
     },
     {
-        'symbol': 'Cache gold reserves',
+        'symbol': 'Cache Gold Reserves',
         'address': '0x5586bf404c7a22a4a4077401272ce5945f80189c',
         'chain': 'Ethereum Mainnet',
         'rpc_url': 'https://eth-mainnet.g.alchemy.com/v2/ZVo9MSHhSrmOOPYOxqAbhmqsUkcydnoh',
         'image_url': 'https://images.prismic.io/data-chain-link/98261c88-123d-4a34-b404-9cbf6f39a211_cachegold.png',
+        'oracle':'16/16'
     },
     {
-        'symbol': 'Amkt PoR',
+        'symbol': 'AMKT PoR',
         'address': '0x32640253a3d0fc25597d8a784a839311ff404c83',
         'chain': 'Polygon Mainnet',
         'rpc_url': 'https://polygon-mainnet.g.alchemy.com/v2/hsCQ2wVikhsBGfLwjnLPlDpGl8dOJYe4',
         'image_url': 'https://images.prismic.io/data-chain-link/2f244404-cd3d-4a73-81b6-f70acff025f1_alongside+logo.png',
+        'oracle':'9/10'
     },
     {
         'symbol': 'Bored Ape Yacht Club',
@@ -110,12 +125,14 @@ export const assetMapping = [
         'chain': 'Ethereum Mainnet',
         'rpc_url': 'https://eth-mainnet.g.alchemy.com/v2/ZVo9MSHhSrmOOPYOxqAbhmqsUkcydnoh',
         'image_url': 'https://images.prismic.io/data-chain-link/241f8701-b932-4221-817e-f5d270dfa7d3_BAYC+Icon.avif',
+        'oracle':'16/16'
     },
     {
-        'symbol': 'Crypto punks',
+        'symbol': 'Cryptopunks',
         'address': '0x01b6710b01cf3dd8ae64243097d91afb03728fdd',
         'chain': 'Ethereum Mainnet',
         'rpc_url': 'https://eth-mainnet.g.alchemy.com/v2/ZVo9MSHhSrmOOPYOxqAbhmqsUkcydnoh',
         'image_url': 'https://images.prismic.io/data-chain-link/645b21ab-1d7e-49ec-bc22-b36df2d9a6be_Crypto+Punks+Icon.png',
+        'oracle':'15/16'
     },
 ];
