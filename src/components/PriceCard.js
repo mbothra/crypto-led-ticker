@@ -32,7 +32,7 @@ export class PriceCard extends React.Component {
                     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                         <span style={{ color: 'white', fontSize: sizes.brand.fontSize, fontFamily: sizes.brand.fontFamily }}>Data</span>
                         <Box sx={{ background: 'white', borderRadius: '8px', padding: '0.2em 0.5em', marginTop: '0.5em' }}>
-                            <span style={{ color: '#375bd2', fontSize: sizes.brand.fontSize, fontFamily: sizes.brand.fontFamily }}>feeds</span>
+                            <span style={{ color: '#375bd2', fontSize: sizes.brand.fontSize, fontFamily: sizes.brand.fontFamily }}>Feeds</span>
                         </Box>
                     </Box>
                 </Box>
