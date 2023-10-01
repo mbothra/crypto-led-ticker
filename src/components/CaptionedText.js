@@ -1,6 +1,7 @@
 import React from 'react';
 import { Typography, Box } from '@mui/material';
 import theme from '../Theme';
+import ledimage from './led-image.png';
 
 class CaptionedText extends React.Component {
 
@@ -35,6 +36,20 @@ class CaptionedText extends React.Component {
         const { sizes } = theme;
 
         let color, variant=sizes.main.otherVariant, font='MaisonMono'
+
+        if(captionText == 'Last Updated') {
+            return (
+                <Box sx={{my: 2}}>
+                    <Typography variant={variant} component="div" gutterBottom fontFamily={font} color="white" marginRight="50px">
+                        {/* <img src={ledimage} alt="logo" style={{ width: sizes.card.height, height: 100 }} /> */}
+                    </Typography>
+                    <Typography variant="caption" gutterBottom component="div" fontFamily= {font} color='black'>
+                        {captionText}
+                    </Typography>
+                </Box>
+            );
+        }
+
         if(captionText == '-') {
             if(mainText.length > 9) {
                 return (
