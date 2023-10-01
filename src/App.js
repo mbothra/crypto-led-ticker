@@ -79,7 +79,7 @@ export default function App() {
         <FullScreen handle={handle}>
         <div style={{ width: '2880px', height: '384px', overflow: 'hidden' }}>
     <HorizontalTicker
-          duration={200000}
+          duration={250000}
           easing={"linear"}
           delay={0}
         >
@@ -88,7 +88,7 @@ export default function App() {
         </div>
         <div style={{ width: '2880px', height: '384px', overflow: 'hidden' }}>
 
-            <HorizontalTicker duration={200000} easing={"linear"} delay={0}>
+            <HorizontalTicker duration={250000} easing={"linear"} delay={0}>
                   {fetchedDataSecondFeed.map(renderBubbles)}
 
                 </HorizontalTicker>
