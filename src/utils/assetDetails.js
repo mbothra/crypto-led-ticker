@@ -112,7 +112,7 @@ export const assetMapping = [
         'oracle':'16/16'
     },
     {
-        'symbol': 'AMKT PoR',
+        'symbol': 'Amkt PoR',
         'address': '0x32640253a3d0fc25597d8a784a839311ff404c83',
         'chain': 'Polygon Mainnet',
         'rpc_url': 'https://polygon-mainnet.g.alchemy.com/v2/hsCQ2wVikhsBGfLwjnLPlDpGl8dOJYe4',
