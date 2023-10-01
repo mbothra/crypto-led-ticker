@@ -34,7 +34,7 @@ class CaptionedText extends React.Component {
     render() {
         const { mainText, captionText, type, isUpward } = this.props;
         const { sizes } = theme;
-
+        let marginTop = '0px'
         let color, variant=sizes.main.otherVariant, font='MaisonMono'
 
         if(captionText == 'Last Updated') {
@@ -49,6 +49,11 @@ class CaptionedText extends React.Component {
                 </Box>
             );
         }
+
+        if(captionText == 'Oracles') {
+            marginTop = '90px'
+        }
+
 
         if(captionText == '-') {
             if(mainText.length > 9) {
@@ -110,7 +115,7 @@ class CaptionedText extends React.Component {
         }
         return (
             <Box sx={{my: 2}}>
-                <Typography variant={variant} component="div" gutterBottom  fontFamily= {font} color='white' marginRight='50px'>
+                <Typography variant={variant} component="div" gutterBottom  fontFamily= {font} color='white' marginRight='50px' marginTop={marginTop}>
                     {mainText}
                 </Typography>
                 <Typography variant="caption" gutterBottom component="div" fontFamily= {font} color={color}>

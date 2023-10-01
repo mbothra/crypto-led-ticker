@@ -46,10 +46,10 @@ const theme = createTheme({
     box: {
       leftWidth: "610px",
       specialLeftWidth: "520px", //special len >8
-      rightWidth: "830px",
+      rightWidth: "430px",
       specialWidth: "680px", //special len =8
-      specialRightWidth: "920px",
-      specialRWidth:"760px"
+      specialRightWidth: "520px",
+      specialRWidth:"360px"
     },
     caption: {
       symbol: "",
